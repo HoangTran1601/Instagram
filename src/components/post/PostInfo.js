@@ -4,44 +4,61 @@ import {
   Text,
   View,
   Image,
-  TouchableWithoutFeedback
-} from 'react-native';
-import Swiper from 'react-native-swiper'
+  TouchableOpacity
+} from 'react-native'
+
 export default class App extends Component<{}> {
   press () {
     alert('hi')
   }
   render() {
     return (
-      <View style={styles.height}>
-        <Swiper style={styles.height}>
-          <TouchableWithoutFeedback 
-            onPress={this.press}
-          >
-            <Image 
-              style={styles.image}
-              source={{uri: 'https://i.amz.mshcdn.com/Yy8JFH_XEGoLxWL9XLmXwQcG470=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F696229%2Fde70f3c0-f660-46f3-a5c0-649c3fb50a75.jpg'}}
-            />
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback 
-            onPress={this.press}
-          >
-            <Image 
-              style={styles.image}
-              source={{uri: 'https://i.amz.mshcdn.com/Yy8JFH_XEGoLxWL9XLmXwQcG470=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F696229%2Fde70f3c0-f660-46f3-a5c0-649c3fb50a75.jpg'}}
-            />
-          </TouchableWithoutFeedback>
-        </Swiper>
+      <View style={styles.container}>
+        <View style={styles.spaceBetween}>
+          <Text style={styles.like}>127 likes</Text>
+        </View>
+        <View style={styles.spaceBetween}>
+          <Text>
+            <Text style={styles.friendName}>cobicobi0811_</Text>
+            <Text style={styles.status}>Gnite everyone .. chúc sớm chứ bảo mình ngủ giờ này thì trời sập 😅</Text>
+          </Text>
+        </View>
+        <View style={styles.spaceBetween}>
+          <Text style={styles.comment}>View all 4 comments</Text>
+        </View>
+        <View>
+          <Text style={styles.postedTime}>34 MINUTE AGO</Text>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  height: {
-    height: 250
+  like: {
+    fontWeight: '700',
+    fontSize: 14,
   },
-  image: {
-    height: 250
+  friendName: {
+    fontWeight: '700',
+    fontSize: 14,
+    lineHeight: 18
+  },
+  status: {
+    fontSize: 14,
+    lineHeight: 18
+  },
+  comment: {
+    color: 'rgb(174,174,175)',
+    fontWeight: '600',
+    fontSize: 16
+  },
+  postedTime: {
+    color: 'rgb(174,174,175)',
+    fontWeight: '600',
+    fontSize: 12
+  },
+  spaceBetween: {
+    marginBottom: 8
   }
 });
