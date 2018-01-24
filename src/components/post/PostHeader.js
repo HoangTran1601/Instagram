@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
   },
   imgMore: {
     height: 35,
-    width: 35,
+    width: 35
   }
 });
