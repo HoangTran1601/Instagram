@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   postedTime: {
     color: 'rgb(174,174,175)',
     fontWeight: '600',
-    fontSize: 12
+    fontSize: 12,
   },
   spaceBetween: {
     marginBottom: 8,
