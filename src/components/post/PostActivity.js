@@ -18,7 +18,7 @@ export default class App extends Component<{}> {
     this.setState({isPress: !this.state.isPress})
   }
   render() {
-    const icon = this.state.isPress ? require('../../assets/img/heart-fill.png') : require('../../assets/img/heart-outline.png')
+    const icon = this.state.isPress ? require('../../assets/img/heart-fill.png') : require('../../assets/img/heart-outline-2.png')
     return (
       <View style={styles.container}>
         <TouchableOpacity 
@@ -33,7 +33,7 @@ export default class App extends Component<{}> {
         <TouchableOpacity style={styles.icon}>
           <Image 
             style={styles.imageComment}
-            source={require('../../assets/img/comment.png')}
+            source={require('../../assets/img/test.png')}
           />
         </TouchableOpacity>
       </View>
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   imageHeart: {
-    width: 30,
-    height: 30
+    width: 32,
+    height: 32
   },
   imageComment: {
-    width: 25,
-    height: 25
+    width: 22,
+    height: 22
   }
 });
