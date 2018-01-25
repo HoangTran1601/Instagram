@@ -7,12 +7,12 @@ import {
   Image,
   TouchableWithoutFeedback
 } from 'react-native';
-import Post from './src/components/post/Post'
+import PostList from './src/components/post/PostList'
 import Swiper from 'react-native-swiper'
 export default class App extends Component<{}> {
   render() {
     return (
-      <Post></Post>
+      <PostList></PostList>
     );
   }
 }
