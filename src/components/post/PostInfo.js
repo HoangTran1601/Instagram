@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   spaceBetween: {
-    marginBottom: 8
+    marginBottom: 8,
   }
 });
