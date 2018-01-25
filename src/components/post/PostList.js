@@ -2,16 +2,69 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  FlatList,
+  ScrollView,
+  ActivityIndicator
 } from 'react-native';
-
+import Post from './Post'
 export default class App extends Component<{}> {
+  constructor (props) {
+    super(props)
+    this.state = {
+      data: [
+        {key: 'Devin'},
+        {key: 'Jackson'},
+        {key: 'James'},
+        {key: 'Joel'}
+      ],
+      isLoading: false,
+      isFooterLoading: false
+    }
+  }
+  scroll () {
+    this.setState({isLoading: true})
+    setTimeout(() => {
+      this.setState({isLoading: false})
+    }, 4000)
+  }
+
+  end () {
+    // alert('ngan')
+    this.setState({isFooterLoading: true})
+    setTimeout(() => {
+      this.setState({isFooterLoading: false})
+    }, 4000)
+  }
+  renderFooter = () => {
+    if (!this.state.isFooterLoading) return null;
+
+    return (
+      <View
+        style={{
+          paddingVertical: 20,
+          borderTopWidth: 1,
+          borderColor: "#CED0CE"
+        }}
+      >
+        <ActivityIndicator animating size="large"/>
+      </View>
+    );
+  };
   render() {
+    const {isLoading} = this.state
     return (
       <View style={styles.container}>
-        <View style={styles.test}>
-          <Text style={styles.text}>Post list</Text>
-        </View>
+        <FlatList
+          onRefresh={this.scroll.bind(this)}
+          refreshing={isLoading}
+          onEndReachedThreshold={1}
+          onEndReached={this.end.bind(this)}
+          data={this.state.data}
+          keyExtractor={item => item.key}
+          ListFooterComponent={this.renderFooter}
+          renderItem={({item}) => <Post></Post>}
+        />
       </View>
     );
   }
