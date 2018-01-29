@@ -7,13 +7,14 @@ import {
   Image,
   TouchableWithoutFeedback
 } from 'react-native';
-import PostList from './src/components/post/PostList'
+
 import Home from './src/screens/Home'
-import Swiper from 'react-native-swiper'
+import Signup from './src/screens/Signup'
+import Login from './src/screens/Login'
 export default class App extends Component<{}> {
   render() {
     return (
-      <Home />
+      <Login />
     );
   }
 }
