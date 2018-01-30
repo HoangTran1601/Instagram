@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableWithoutFeedback
+  ScrollView
 } from 'react-native';
-import Swiper from 'react-native-swiper'
+import Comment from './Comment'
 export default class App extends Component<{}> {
 
   render() {
     return (
-      
+      <ScrollView>
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+      </ScrollView>
     );
   }
 }
