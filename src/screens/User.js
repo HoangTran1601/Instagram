@@ -10,11 +10,11 @@ import {
   FlatList
 } from 'react-native';
 import UserHeader from '../components/user/UserHeader'
-import UserGallery from '../components/user/UserGallery'
 import UserInfo from '../components/user/UserInfo'
 import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
 import UserImage from '../components/user/UserImage'
+import Post from '../components/post/Post'
 
 export default class App extends Component<{}> {
   constructor (props) {
@@ -102,7 +102,7 @@ export default class App extends Component<{}> {
           data={this.state.data}
           keyExtractor={item => item.key}
           ListHeaderComponent={this.renderHeader}
-          renderItem={({item}) => <UserImage />}
+          renderItem={({item}) => <Post />}
         />
       </View>
     );
@@ -135,7 +135,8 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     marginTop: 25,
     borderColor: 'rgb(240,240,240)',
-    borderTopWidth: 1
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
   },
   tabItem: {
     flex: 1,
