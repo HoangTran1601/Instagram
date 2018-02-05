@@ -17,7 +17,7 @@ import UserGallery from './src/components/user/UserGallery'
 export default class App extends Component<{}> {
   render() {
     return (
-      <User />
+      <Home />
     );
   }
 }

@@ -9,6 +9,7 @@ import {
 import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
 import User from './User'
+import UploadPost from './UploadPost'
 export default class App extends Component<{}> {
   constructor (props) {
     super(props)
@@ -36,13 +37,12 @@ export default class App extends Component<{}> {
           renderSelectedIcon={() => <Image style={styles.image} source={require('../assets/img/add-filled.png')} />}
           // renderBadge={() => <CustomBadgeView />}
           onPress={() => this.setState({ selectedTab: 'add' })}>
-          {<Text>HOang</Text>}
+          {<UploadPost />}
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'heart'}
           renderIcon={() => <Image style={styles.image} source={require('../assets/img/heart.png')} />}
           renderSelectedIcon={() => <Image style={styles.image} source={require('../assets/img/heart-filled.png')} />}
-          // renderBadge={() => <CustomBadgeView />}
           onPress={() => this.setState({ selectedTab: 'heart' })}>
           {<Text>Ngan</Text>}
         </TabNavigator.Item>
@@ -50,7 +50,6 @@ export default class App extends Component<{}> {
           selected={this.state.selectedTab === 'profile'}
           renderIcon={() => <Image style={styles.image} source={require('../assets/img/customer.png')} />}
           renderSelectedIcon={() => <Image style={styles.image} source={require('../assets/img/customer-filled.png')} />}
-          // renderBadge={() => <CustomBadgeView />}
           onPress={() => this.setState({ selectedTab: 'profile' })}>
           {<User/>}
         </TabNavigator.Item>
