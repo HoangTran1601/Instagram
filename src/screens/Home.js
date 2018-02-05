@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
+import User from './User'
 export default class App extends Component<{}> {
   constructor (props) {
     super(props)
@@ -20,7 +21,7 @@ export default class App extends Component<{}> {
   }
   render() {
     return (
-      <TabNavigator>
+      <TabNavigator tabBarStyle={styles.tabBarStyle}>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'home'}
           renderIcon={() => <Image style={styles.image} source={require('../assets/img/home.png')} />}
@@ -51,7 +52,7 @@ export default class App extends Component<{}> {
           renderSelectedIcon={() => <Image style={styles.image} source={require('../assets/img/customer-filled.png')} />}
           // renderBadge={() => <CustomBadgeView />}
           onPress={() => this.setState({ selectedTab: 'profile' })}>
-          {<Text>Ronaldo</Text>}
+          {<User/>}
         </TabNavigator.Item>
       </TabNavigator>
     );
@@ -62,5 +63,8 @@ const styles = StyleSheet.create({
   image: {
     width: 25,
     height: 25
+  },
+  tabBarStyle: {
+    backgroundColor: '#fafafa'
   }
 });
