@@ -8,7 +8,7 @@ import PostHeader from './PostHeader'
 import PostActivity from './PostActivity'
 import PostImage from './PostImage'
 import PostInfo from './PostInfo'
-export default class App extends Component<{}> {
+export default class Post extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>

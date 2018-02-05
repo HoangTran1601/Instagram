@@ -8,7 +8,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import Post from './Post'
-export default class App extends Component<{}> {
+export default class PostList extends Component<{}> {
   constructor (props) {
     super(props)
     this.state = {

@@ -10,7 +10,7 @@ import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
 import User from './User'
 import UploadPost from './UploadPost'
-export default class App extends Component<{}> {
+export default class Home extends Component<{}> {
   constructor (props) {
     super(props)
     this.state = {

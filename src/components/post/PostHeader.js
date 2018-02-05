@@ -7,7 +7,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default class App extends Component<{}> {
+export default class PostHeader
+ extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>

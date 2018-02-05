@@ -6,7 +6,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-export default class App extends Component<{}> {
+export default class UserHeader extends Component<{}> {
 
   render() {
     return (

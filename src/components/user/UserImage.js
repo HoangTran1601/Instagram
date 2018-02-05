@@ -10,7 +10,7 @@ import { Dimensions } from 'react-native'
 
 const WIDTH = Dimensions.get('window').width
 
-export default class App extends Component<{}> {
+export default class UserImage extends Component<{}> {
   render() {
     return (
       <TouchableWithoutFeedback>

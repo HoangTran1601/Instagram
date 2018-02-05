@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
-export default class App extends Component<{}> {
+export default class Login extends Component<{}> {
   constructor (props) {
     super(props)
     this.state = {

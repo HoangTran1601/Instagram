@@ -16,7 +16,7 @@ import PostList from '../components/post/PostList'
 import UserImage from '../components/user/UserImage'
 import Post from '../components/post/Post'
 
-export default class App extends Component<{}> {
+export default class User extends Component<{}> {
   constructor (props) {
     super(props)
     this.state = {

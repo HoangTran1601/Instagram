@@ -6,7 +6,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-export default class App extends Component<{}> {
+export default class UserInfo extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>

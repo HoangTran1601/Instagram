@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Swiper from 'react-native-swiper'
-export default class App extends Component<{}> {
+export default class Comment extends Component<{}> {
   constructor (props) {
     super(props)
     this.state = {

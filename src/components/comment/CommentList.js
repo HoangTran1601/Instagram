@@ -4,7 +4,7 @@ import {
   ScrollView
 } from 'react-native';
 import Comment from './Comment'
-export default class App extends Component<{}> {
+export default class CommentList extends Component<{}> {
 
   render() {
     return (

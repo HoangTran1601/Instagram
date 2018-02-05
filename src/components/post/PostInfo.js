@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-export default class App extends Component<{}> {
+export default class PostInfo extends Component<{}> {
   press () {
     alert('hi')
   }
