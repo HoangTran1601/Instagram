@@ -34,7 +34,8 @@ export default class App extends Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 15
+    paddingTop: 10,
+    paddingBottom: 10
   },
   postItemLayout: {
     paddingLeft: 15,
