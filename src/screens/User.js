@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import UserHeader from '../components/user/UserHeader'
 import UserGallery from '../components/user/UserGallery'
+import UserInfo from '../components/user/UserInfo'
 import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
 export default class App extends Component<{}> {
@@ -24,7 +25,10 @@ export default class App extends Component<{}> {
       <View style={styles.container}>
         <View style={styles.userHeader}>
           <UserHeader />
-        </View> 
+        </View>
+        <View style={styles.userInfo}>
+          <UserInfo />
+        </View>
         <View style={styles.tabBar}>
         <TabNavigator tabBarStyle={styles.tabBarStyle}>
           <TabNavigator.Item
@@ -57,6 +61,11 @@ const styles = StyleSheet.create({
   },
   userHeader: {
     paddingLeft: 10,
+    paddingRight: 10,
+    marginBottom: 20
+  },
+  userInfo: {
+    paddingLeft: 10,
     paddingRight: 10
   },
   image: {
@@ -72,6 +81,6 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     flex: 1,
-    marginTop: 30
+    marginTop: 25
   }
 });
