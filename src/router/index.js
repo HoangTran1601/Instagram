@@ -37,7 +37,10 @@ const NewsFeedNavigation = StackNavigator({
 
 const tabBar = TabNavigator({
   NewFeed_Screen: {
-    screen: NewsFeedNavigation
+    screen: NewsFeedNavigation,
+    navigationOptions: {
+      header: null
+    }
   },
   User_Screen: {
     screen: User
@@ -72,10 +75,7 @@ const tabBar = TabNavigator({
 
 export default App = StackNavigator({
   Home: {
-    screen: tabBar,
-    navigationOptions: {
-      header: null
-    }
+    screen: tabBar
   },
   UpLoadPost_Screen: {
     screen: UploadPost

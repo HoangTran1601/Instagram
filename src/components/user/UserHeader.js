@@ -46,7 +46,7 @@ export default class UserHeader extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginTop: 50
+    marginTop: 10
   },
   imageArea: {
     marginRight: 20
