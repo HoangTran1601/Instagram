@@ -13,10 +13,11 @@ import Signup from './src/screens/Signup'
 import Login from './src/screens/Login'
 import CommentList from './src/components/comment/CommentList'
 import User from './src/screens/User'
+import Router from './src/router'
 export default class App extends Component<{}> {
   render() {
     return (
-      <Home />
+      <Router />
     );
   }
 }
