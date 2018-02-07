@@ -26,7 +26,7 @@ export default class PostInfo extends Component<{}> {
         <View style={styles.spaceBetween}>
           <Text 
             style={styles.comment}
-            onPress={this.props.onPress}
+            onPress={this.props.onPressComment}
           >
             View all 4 comments
           </Text>

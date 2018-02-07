@@ -4,7 +4,7 @@ import {
   TabNavigator,
   TabBarBottom
 } from 'react-navigation';
-import { Image } from 'react-native'
+import { View, Image } from 'react-native'
 
 import Login from '../screens/Login'
 import Signup from '../screens/Signup';
@@ -13,9 +13,31 @@ import UploadPost from '../screens/UploadPost'
 import User from '../screens/User'
 import PostList from '../components/post/PostList'
 import CommentPage from '../screens/CommentPage'
+
+const NewsFeedNavigation = StackNavigator({
+  PostList_Screen: {
+    screen: PostList,
+    navigationOptions: {
+      headerTitle: <Image style={{height: 35, width: 120}}source={require('../assets/img/Instagram_logo.svg.png')}/>
+    }
+  },
+  Friend_Screen: {
+    screen: User,
+    navigationOptions: {
+      headerTintColor: '#000'
+    }
+  }
+},{
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#fff'
+    }
+  }
+})
+
 const tabBar = TabNavigator({
   NewFeed_Screen: {
-    screen: PostList
+    screen: NewsFeedNavigation
   },
   User_Screen: {
     screen: User
@@ -50,7 +72,10 @@ const tabBar = TabNavigator({
 
 export default App = StackNavigator({
   Home: {
-    screen: tabBar
+    screen: tabBar,
+    navigationOptions: {
+      header: null
+    }
   },
   UpLoadPost_Screen: {
     screen: UploadPost
@@ -59,6 +84,14 @@ export default App = StackNavigator({
     screen: CommentPage,
     navigationOptions: {
       title: 'Comments'
+    }
+  }
+},
+{
+  navigationOptions: {
+    headerTintColor: '#000',
+    headerStyle: {
+      backgroundColor: '#fff',
     }
   }
 });

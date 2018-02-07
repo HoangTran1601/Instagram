@@ -15,7 +15,10 @@ export default class PostHeader extends Component<{}> {
           style={styles.avatar}
           source={{uri: 'https://thumbor.forbes.com/thumbor/1280x868/smart/https%3A%2F%2Fblogs-images.forbes.com%2Fsteveolenski%2Ffiles%2F2017%2F10%2Fsmart_city.jpg'}}
         />
-        <TouchableOpacity style={styles.friendName}>
+        <TouchableOpacity 
+          style={styles.friendName}
+          onPress={this.props.onPressFriendName}
+        >
           <Text>Hoang</Text>
         </TouchableOpacity>
 

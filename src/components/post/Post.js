@@ -13,7 +13,7 @@ export default class Post extends Component<{}> {
     return (
       <View style={styles.container}>
         <View style={[styles.postHeader, styles.postItemLayout]}>
-          <PostHeader />
+          <PostHeader onPressFriendName={this.props.onPressFriendName}/>
         </View>
 
         <View style={[styles.postImage]}>
@@ -21,11 +21,11 @@ export default class Post extends Component<{}> {
         </View>
 
         <View style={[styles.postActivity, styles.postItemLayout]}>
-          <PostActivity onPress={this.props.onPress}/>
+          <PostActivity onPressComment={this.props.onPressComment}/>
         </View>
 
         <View style={[styles.postInfo, styles.postItemLayout]}>
-          <PostInfo onPress={this.props.onPress}/>
+          <PostInfo onPressComment={this.props.onPressComment}/>
         </View>
       </View>
     );

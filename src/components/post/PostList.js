@@ -65,7 +65,13 @@ export default class PostList extends Component<{}> {
           data={this.state.data}
           keyExtractor={item => item.key}
           ListFooterComponent={this.renderFooter}
-          renderItem={({item}) => <Post onPress={() => navigate('Comment_Screen')}></Post>}
+          renderItem={({item}) => 
+            <Post 
+              onPressComment={() => navigate('Comment_Screen')}
+              onPressFriendName={() => navigate('Friend_Screen')}
+            >
+            </Post>
+          }
         />
       </View>
     );
