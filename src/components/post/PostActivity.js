@@ -30,7 +30,9 @@ export default class PostActivity extends Component<{}> {
               source={icon}
             />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.icon}>
+        <TouchableOpacity 
+          style={styles.icon}
+          onPress={this.props.onPress}>
           <Image 
             style={styles.imageComment}
             source={require('../../assets/img/test.png')}
