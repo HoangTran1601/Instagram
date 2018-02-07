@@ -14,6 +14,18 @@ export default class CommentList extends Component<{}> {
         <Comment />
         <Comment />
         <Comment />
+
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
       </ScrollView>
     );
   }
