@@ -21,11 +21,11 @@ export default class Post extends Component<{}> {
         </View>
 
         <View style={[styles.postActivity, styles.postItemLayout]}>
-          <PostActivity />
+          <PostActivity onPress={this.props.onPress}/>
         </View>
 
         <View style={[styles.postInfo, styles.postItemLayout]}>
-          <PostInfo />
+          <PostInfo onPress={this.props.onPress}/>
         </View>
       </View>
     );

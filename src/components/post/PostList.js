@@ -5,7 +5,8 @@ import {
   View,
   FlatList,
   ScrollView,
-  ActivityIndicator
+  ActivityIndicator,
+  Button
 } from 'react-native';
 import Post from './Post'
 export default class PostList extends Component<{}> {
@@ -53,6 +54,7 @@ export default class PostList extends Component<{}> {
   };
   render() {
     const {isLoading} = this.state
+    const { navigate } = this.props.navigation
     return (
       <View style={styles.container}>
         <FlatList
@@ -63,7 +65,7 @@ export default class PostList extends Component<{}> {
           data={this.state.data}
           keyExtractor={item => item.key}
           ListFooterComponent={this.renderFooter}
-          renderItem={({item}) => <Post></Post>}
+          renderItem={({item}) => <Post onPress={() => navigate('Comment_Screen')}></Post>}
         />
       </View>
     );
@@ -71,4 +73,7 @@ export default class PostList extends Component<{}> {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff'
+  }
 });

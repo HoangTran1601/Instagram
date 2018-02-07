@@ -24,7 +24,12 @@ export default class PostInfo extends Component<{}> {
           </Text>
         </View>
         <View style={styles.spaceBetween}>
-          <Text style={styles.comment}>View all 4 comments</Text>
+          <Text 
+            style={styles.comment}
+            onPress={this.props.onPress}
+          >
+            View all 4 comments
+          </Text>
         </View>
         <View>
           <Text style={styles.postedTime}>34 MINUTE AGO</Text>
