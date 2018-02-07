@@ -21,6 +21,7 @@ export default class Home extends Component<{}> {
     alert('hi')
   }
   render() {
+    const { navigate } = this.props.navigation
     return (
       <TabNavigator tabBarStyle={styles.tabBarStyle}>
         <TabNavigator.Item
@@ -32,12 +33,10 @@ export default class Home extends Component<{}> {
           {<PostList/>}
         </TabNavigator.Item>
         <TabNavigator.Item
-          selected={this.state.selectedTab === 'add'}
           renderIcon={() => <Image style={styles.image} source={require('../assets/img/add.png')} />}
           renderSelectedIcon={() => <Image style={styles.image} source={require('../assets/img/add-filled.png')} />}
           // renderBadge={() => <CustomBadgeView />}
-          onPress={() => this.setState({ selectedTab: 'add' })}>
-          {<UploadPost />}
+          onPress={() => navigate('UploadPost_Screen')}>
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'heart'}

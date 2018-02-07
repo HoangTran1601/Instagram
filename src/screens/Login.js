@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
+
 export default class Login extends Component<{}> {
   constructor (props) {
     super(props)
@@ -18,10 +19,12 @@ export default class Login extends Component<{}> {
       isDisabled: true
     }
   }
+
   handleLogin () {
+    const { navigate } = this.props.navigation
     const {username, password} = this.state
-    if (username !== '' && password !== '') {
-      alert('hi')
+    if (username === 'Hoang' && password === '1') {
+      navigate('Home_Screen')
     }
   }
   handleOnChange () {
@@ -34,6 +37,7 @@ export default class Login extends Component<{}> {
     
   }
   render() {
+    const { navigate } = this.props.navigation
     return (
       <View style={styles.container}>
         <View style={styles.logoArea}>
@@ -58,7 +62,7 @@ export default class Login extends Component<{}> {
             secureTextEntry={true}
           />
           <TouchableWithoutFeedback
-            disabled={this.state.isDisabled}
+            // disabled={this.state.isDisabled}
             onPress={this.handleLogin.bind(this)}
           >
             <View style={this.state.isDisabled ? styles.loginButtonDisabled : styles.loginButton}>
@@ -69,7 +73,12 @@ export default class Login extends Component<{}> {
         <View style={styles.signInRedirect}>
           <Text>
             <Text style={styles.subTitle}>Don't have an account?</Text>
-            <Text style={styles.signUp}>Sign up</Text>
+            <Text 
+              style={styles.signUp}
+              onPress={ () => navigate('Signup_Screen')}
+            >  
+              Sign up
+            </Text>
           </Text>
         </View>
       </View>
@@ -79,7 +88,8 @@ export default class Login extends Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   logoArea: {
     backgroundColor: 'rgb(34,114,166)',
@@ -96,7 +106,7 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderRadius: 7,
-    borderColor: 'rgb(230,230,230)',
+    borderColor: 'rgb(227,227,227)',
     paddingTop: 10,
     paddingLeft: 15,
     paddingRight: 15,

@@ -18,6 +18,7 @@ export default class Signup extends Component<{}> {
       isDisabled: true
     }
   }
+
   handleLogin () {
     const {username, password} = this.state
     if (username !== '' && password !== '') {
@@ -34,6 +35,8 @@ export default class Signup extends Component<{}> {
     
   }
   render() {
+    const { navigate } = this.props.navigation
+    const { goBack } = this.props.navigation
     return (
       <View style={styles.container}>
         <View style={styles.titleArea}>
@@ -67,7 +70,12 @@ export default class Signup extends Component<{}> {
         <View style={styles.signInRedirect}>
           <Text>
             <Text style={styles.subTitle}>Already have an account?</Text>
-            <Text style={styles.signUp}>Sign in</Text>
+            <Text 
+              style={styles.signUp}
+              onPress={ () => goBack()}
+            >
+                Sign in
+            </Text>
           </Text>
         </View>
       </View>
@@ -78,7 +86,8 @@ export default class Signup extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 90
+    paddingTop: 90,
+    backgroundColor: 'white'
   },
   loginArea: {
     flex: 1,

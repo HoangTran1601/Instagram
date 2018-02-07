@@ -16,17 +16,23 @@ export default class UploadPost extends Component<{}> {
       selectedTab: 'library'
     }
   }
+  handleOnPress (tabTitle) {
+    this.setState({ selectedTab: tabTitle })
+    this.props.navigation.navigate('UploadPost')
+  }
   render() {
     return (
+      <View style={styles.container}>
       <TabNavigator tabBarStyle={styles.tabBarStyle}>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'library'}
           title="Library"
           titleStyle={styles.titleStyle}
           selectedTitleStyle={styles.selectedTitleStyle}
-          onPress={() => this.setState({ selectedTab: 'library' })}>
+          onPress={() => this.setState({ selectedTab: 'library'})}>
           {
-            <AllowAccess 
+            <AllowAccess
+              header="Library"
               title="Plese Allow Access to Your Photos"
               description="This allows Instagram to share photos from your library and save photos to your camera roll"
               enable="Enable Library Access"
@@ -42,6 +48,7 @@ export default class UploadPost extends Component<{}> {
           onPress={() => this.setState({ selectedTab: 'photo' })}>
           {
             <AllowAccess 
+              header="Photos"
               title="Take Photos With Instagram"
               description="Allow access to your camera to start talking photos with the Instagram app."
               enable="Enable Camera Access"
@@ -55,7 +62,8 @@ export default class UploadPost extends Component<{}> {
           selectedTitleStyle={styles.selectedTitleStyle}
           onPress={() => this.setState({ selectedTab: 'video' })}>
           {
-            <AllowAccess 
+            <AllowAccess
+              header="Video"
               title="Take Photos With Instagram"
               description="Allow access to your camera to start talking photos with the Instagram app."
               enable="Enable Camera Access"
@@ -63,11 +71,16 @@ export default class UploadPost extends Component<{}> {
           }
         </TabNavigator.Item>
       </TabNavigator>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
   tabBarStyle: {
     backgroundColor: '#fff',
     borderWidth: 0,
@@ -77,7 +90,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   titleStyle: {
-    fontSize: 15,
+    fontSize: 16,
     color: 'rgb(142,142,142)',
     textAlign: 'center'
   },
