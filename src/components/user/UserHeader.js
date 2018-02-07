@@ -34,7 +34,7 @@ export default class UserHeader extends Component<{}> {
               </View>
             </View>
             <TouchableOpacity style={styles.button}>
-              <Text>Message</Text>
+              <Text>Edit Profile</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -77,10 +77,13 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
-    backgroundColor: 'blue',
+    backgroundColor: 'transparent',
     height: 35,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5
+    borderRadius: 5,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'rgb(231,231,231)',
   }
 });
