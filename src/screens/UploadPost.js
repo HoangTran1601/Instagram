@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import AllowAccess from '../components/upload_post/allow_acces/AllowAccess'
 import TabNavigator from 'react-native-tab-navigator'
+import UploadTabbar from '../router/upload_tabbar'
 export default class UploadPost extends Component<{}> {
   constructor (props) {
     super(props)
@@ -22,56 +23,7 @@ export default class UploadPost extends Component<{}> {
   }
   render() {
     return (
-      <View style={styles.container}>
-      <TabNavigator tabBarStyle={styles.tabBarStyle}>
-        <TabNavigator.Item
-          selected={this.state.selectedTab === 'library'}
-          title="Library"
-          titleStyle={styles.titleStyle}
-          selectedTitleStyle={styles.selectedTitleStyle}
-          onPress={() => this.setState({ selectedTab: 'library'})}>
-          {
-            <AllowAccess
-              header="Library"
-              title="Plese Allow Access to Your Photos"
-              description="This allows Instagram to share photos from your library and save photos to your camera roll"
-              enable="Enable Library Access"
-            />
-          }
-        </TabNavigator.Item>
-        
-        <TabNavigator.Item
-          selected={this.state.selectedTab === 'photo'}
-          title="Photo"
-          titleStyle={styles.titleStyle}
-          selectedTitleStyle={styles.selectedTitleStyle}
-          onPress={() => this.setState({ selectedTab: 'photo' })}>
-          {
-            <AllowAccess 
-              header="Photos"
-              title="Take Photos With Instagram"
-              description="Allow access to your camera to start talking photos with the Instagram app."
-              enable="Enable Camera Access"
-            />
-          }
-        </TabNavigator.Item>
-        <TabNavigator.Item
-          selected={this.state.selectedTab === 'video'}
-          title="Video"
-          titleStyle={styles.titleStyle}
-          selectedTitleStyle={styles.selectedTitleStyle}
-          onPress={() => this.setState({ selectedTab: 'video' })}>
-          {
-            <AllowAccess
-              header="Video"
-              title="Take Photos With Instagram"
-              description="Allow access to your camera to start talking photos with the Instagram app."
-              enable="Enable Camera Access"
-          />
-          }
-        </TabNavigator.Item>
-      </TabNavigator>
-      </View>
+      <UploadTabbar />
     );
   }
 }
