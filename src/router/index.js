@@ -42,6 +42,9 @@ const tabBar = TabNavigator({
       header: null
     }
   },
+  UpLoadPost_Screen: {
+    screen: UploadPost
+  },
   User_Screen: {
     screen: User
   }
@@ -52,11 +55,11 @@ const tabBar = TabNavigator({
       const { routeName } = navigation.state;
       let iconName;
       if (routeName === 'NewFeed_Screen') {
-        iconName = require('../assets/img/home-filled.png');
+        iconName = focused ?  require('../assets/img/home-filled.png') : require('../assets/img/home.png');
       } else if (routeName === 'UpLoadPost_Screen') {
-        iconName = require('../assets/img/add-filled.png')
+        iconName = focused ? require('../assets/img/add-filled.png') : require('../assets/img/add.png')
       } else if (routeName === 'User_Screen') {
-        iconName = require('../assets/img/customer-filled.png');
+        iconName = focused ? require('../assets/img/customer-filled.png') :  require('../assets/img/customer.png');
       }
       return <Image style={{width: 25, height: 25, tintColor: tintColor}}source={iconName} />
     },
