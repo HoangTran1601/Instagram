@@ -15,6 +15,7 @@ import TabNavigator from 'react-native-tab-navigator'
 import PostList from '../components/post/PostList'
 import UserImage from '../components/user/UserImage'
 import Post from '../components/post/Post'
+import UserTabbar from '../router/user_tabbar'
 
 export default class User extends Component<{}> {
   constructor (props) {
@@ -92,19 +93,49 @@ export default class User extends Component<{}> {
   render() {
     const {isLoading} = this.state
     return (
-      <View style={styles.container}>
-        <FlatList 
-          numColumns={3}
-          onRefresh={this.scroll.bind(this)}
-          refreshing={isLoading}
-          onEndReachedThreshold={1}
-          onEndReached={this.end.bind(this)}
-          data={this.state.data}
-          keyExtractor={item => item.key}
-          ListHeaderComponent={this.renderHeader}
-          renderItem={({item}) => <Post />}
-        />
-      </View>
+      // <View style={styles.container}>
+      //   <FlatList 
+      //     numColumns={3}
+      //     onRefresh={this.scroll.bind(this)}
+      //     refreshing={isLoading}
+      //     onEndReachedThreshold={1}
+      //     onEndReached={this.end.bind(this)}
+      //     data={this.state.data}
+      //     keyExtractor={item => item.key}
+      //     ListHeaderComponent={this.renderHeader}
+      //     renderItem={({item}) => <Post />}
+      //   />
+      // </View>
+      <ScrollView style={styles.container}>
+        <View>
+          <View style={styles.userHeader}>
+            <UserHeader />
+          </View>
+
+          <View style={styles.userInfo}>
+            <UserInfo />
+          </View>
+          <View style={styles.tabBar}>
+            {/* <View style={styles.tabItem}>
+              <TouchableWithoutFeedback>
+                <Image
+                  style={styles.icon}
+                  source={require('../assets/img/image_icon.png')}
+                />
+              </TouchableWithoutFeedback>
+            </View>
+            <View style={styles.tabItem}>
+              <TouchableWithoutFeedback>
+                <Image
+                  style={styles.icon}
+                  source={require('../assets/img/post_icon.png')}
+                />
+              </TouchableWithoutFeedback>
+            </View> */}
+            <UserTabbar />
+          </View>
+        </View>
+      </ScrollView>
     );
   }
 
@@ -130,14 +161,7 @@ const styles = StyleSheet.create({
     height: 25
   },
   tabBar: {
-    display: 'flex',
-    flexDirection: 'row',
-    paddingTop: 15,
-    paddingBottom: 15,
     marginTop: 25,
-    borderColor: 'rgb(240,240,240)',
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
   },
   tabItem: {
     flex: 1,
