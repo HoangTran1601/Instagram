@@ -6,18 +6,20 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
+
 export default class UserInfo extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.username}>Ronal979</Text>
+          <Text style={styles.username}>{this.props.username}</Text>
         </View>
         <View>
-          <Text style={styles.bio}>Something will happen</Text>
+          <Text style={styles.bio}>{this.props.bio}</Text>
         </View>
         <View>
-          <Text style={styles.website}>www.never.com</Text>
+          <Text style={styles.website}>{this.props.website}</Text>
         </View>
       </View>
     );
@@ -41,3 +43,8 @@ const styles = StyleSheet.create({
   }
 });
 
+UserInfo.propTypes = {
+  username: PropTypes.string,
+  bio: PropTypes.string,
+  website: PropTypes.string
+}

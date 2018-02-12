@@ -6,6 +6,8 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
+
 export default class AllowAccess extends Component<{}> {
   render() {
     return (
@@ -49,3 +51,9 @@ const styles = StyleSheet.create({
   }
 });
 
+
+AllowAccess.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  enable: PropTypes.string
+}

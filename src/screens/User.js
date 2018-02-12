@@ -109,11 +109,19 @@ export default class User extends Component<{}> {
       <ScrollView style={styles.container}>
         <View>
           <View style={styles.userHeader}>
-            <UserHeader />
+            <UserHeader 
+              amountPost="242"
+              amountFollower="65.3K"
+              amountFollowing="21"
+            />
           </View>
 
           <View style={styles.userInfo}>
-            <UserInfo />
+            <UserInfo 
+              username="Ronal979"
+              bio="Something will happen"
+              website="www.never.com"
+            />
           </View>
           <View style={styles.tabBar}>
             {/* <View style={styles.tabItem}>

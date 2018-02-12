@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Swiper from 'react-native-swiper'
 export default class Comment extends Component<{}> {
   constructor (props) {
@@ -29,11 +30,11 @@ export default class Comment extends Component<{}> {
         </View>
         <View style={styles.commentContent}>
           <View style={styles.text}>
-            <Text style={styles.username}>HoangTran1996</Text>
+            <Text style={styles.username}>{this.props.username}</Text>
           </View>
-          <Text style={styles.comment}>What upppp ??What upppp ?</Text>
+          <Text style={styles.comment}>{this.props.content}</Text>
           <View style={styles.likeAmount}>
-            <Text style={styles.likeAmountText}>1 Like</Text>
+            <Text style={styles.likeAmountText}>{this.props.amountLike} like</Text>
           </View>
         </View>
 
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 14
   },
   likeAmount: {
-    marginTop: 10
+    marginTop: 5
   },
   likeAmountText: {
     color: 'rgb(168,168,168)',
@@ -92,3 +93,9 @@ const styles = StyleSheet.create({
     fontWeight: '600'
   }
 });
+
+Comment.propTypes = {
+  content: PropTypes.string,
+  username: PropTypes.string,
+  amountLike: PropTypes.number
+}

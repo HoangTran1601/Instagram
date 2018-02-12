@@ -6,8 +6,9 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-export default class UserHeader extends Component<{}> {
+import PropTypes from 'prop-types';
 
+export default class UserHeader extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
@@ -21,15 +22,15 @@ export default class UserHeader extends Component<{}> {
           <View style={styles.generalInfoContent}>
             <View style={styles.amount}>
               <View style={styles.amountItem}>
-                <Text style={styles.titleText}>223</Text>
+                <Text style={styles.titleText}>{this.props.amountPost}</Text>
                 <Text style={styles.subTitleText}>posts</Text>
               </View>
               <View style={styles.amountItem}>
-                <Text style={styles.titleText}>63.1K</Text>
+                <Text style={styles.titleText}>{this.props.amountFollower}</Text>
                 <Text style={styles.subTitleText}>followers</Text>
               </View>
               <View style={styles.amountItem}>
-                <Text style={styles.titleText}>92</Text>
+                <Text style={styles.titleText}>{this.props.amountFollowing}</Text>
                 <Text style={styles.subTitleText}>following</Text>
               </View>
             </View>
@@ -87,3 +88,9 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(231,231,231)',
   }
 });
+
+UserHeader.propTypes = {
+  amountPost: PropTypes.string,
+  amountFollower: PropTypes.string,
+  amountFollowing: PropTypes.string
+}

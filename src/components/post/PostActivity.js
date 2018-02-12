@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class PostActivity extends Component<{}> {
   constructor (props) {
@@ -60,3 +61,7 @@ const styles = StyleSheet.create({
     height: 22
   }
 });
+
+PostActivity.propTypes = {
+  onPressComment: PropTypes.func
+}

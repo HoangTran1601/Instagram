@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class PostHeader extends Component<{}> {
   render() {
@@ -52,3 +53,7 @@ const styles = StyleSheet.create({
     width: 35
   }
 });
+
+PostHeader.propTypes = {
+  onPressFriendName: PropTypes.func
+}

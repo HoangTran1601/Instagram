@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native'
+import PropTypes from 'prop-types';
 
 export default class PostInfo extends Component<{}> {
   press () {
@@ -15,12 +16,12 @@ export default class PostInfo extends Component<{}> {
     return (
       <View style={styles.container}>
         <View style={styles.spaceBetween}>
-          <Text style={styles.like}>127 likes</Text>
+          <Text style={styles.like}>{this.props.totalLike} likes</Text>
         </View>
         <View style={styles.spaceBetween}>
           <Text>
-            <Text style={styles.friendName}>cobicobi0811_</Text>
-            <Text style={styles.status}>Gnite everyone .. chúc sớm chứ bảo mình ngủ giờ này thì trời sập 😅</Text>
+            <Text style={styles.friendName}>{this.props.friendName}</Text>
+            <Text style={styles.status}>{this.props.status}</Text>
           </Text>
         </View>
         <View style={styles.spaceBetween}>
@@ -28,7 +29,7 @@ export default class PostInfo extends Component<{}> {
             style={styles.comment}
             onPress={this.props.onPressComment}
           >
-            View all 4 comments
+            View all {this.props.totalComment} comments
           </Text>
         </View>
         <View>
@@ -67,3 +68,11 @@ const styles = StyleSheet.create({
     marginBottom: 8
   }
 });
+
+PostInfo.propTypes = {
+  onPressComment: PropTypes.func,
+  friendName: PropTypes.string,
+  status: PropTypes.string,
+  totalComment: PropTypes.number,
+  totalLike: PropTypes.number
+}
