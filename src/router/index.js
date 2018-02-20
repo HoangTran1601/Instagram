@@ -13,6 +13,8 @@ import UploadPost from '../screens/UploadPost'
 import User from '../screens/User'
 import PostList from '../components/post/PostList'
 import CommentPage from '../screens/CommentPage'
+import PostDetail from '../screens/PostDetail'
+import { Stack } from 'immutable';
 
 const NewsFeedNavigation = StackNavigator({
   PostList_Screen: {
@@ -35,6 +37,15 @@ const NewsFeedNavigation = StackNavigator({
   }
 })
 
+const UserNavigation = StackNavigator({
+  User_Screen: {
+    screen: User
+  },
+  UserPostDetail_Screen: {
+    screen: PostDetail
+  }
+})
+
 const tabBar = TabNavigator({
   NewFeed_Screen: {
     screen: NewsFeedNavigation,
@@ -46,7 +57,7 @@ const tabBar = TabNavigator({
     screen: UploadPost
   },
   User_Screen: {
-    screen: User
+    screen: UserNavigation
   }
 },
 {

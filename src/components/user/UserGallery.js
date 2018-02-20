@@ -45,7 +45,7 @@ export default class UserGallery extends Component<{}> {
           data={this.state.data}
           keyExtractor={item => item.key}
           // ListHeaderComponent={this.renderHeader}
-          renderItem={({item}) => <UserImage />}
+          renderItem={({item}) => <UserImage onPressPostDetail={this.props.onPressPostDetail}/>}
         />
       </View>
     );

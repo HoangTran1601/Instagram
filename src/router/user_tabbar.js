@@ -10,7 +10,7 @@ import PostList from '../components/post/PostList'
 
 export default tabBar = TabNavigator({
   UserImage_Screen: {
-    screen: UserGallery
+    screen: () => <UserGallery onPressPostDetail={() => this.props.navigation.navigate('UserPostDetail_Screen')}/>
   },
   UserPost_Screen: {
     screen: PostList
